@@ -1,0 +1,343 @@
+@font-face {
+  font-family: "Pixelify sans";
+  src: url("Pixelify_Sans/PixelifySans-VariableFont_wght.ttf")
+    format("truetype");
+}
+
+body {
+  margin: 0;
+  font-family: "Pixelify sans", bold;
+  background-color: #b8e6b7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-weight: bold;
+}
+
+.container {
+  text-align: center;
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+}
+
+.loading {
+  font-family: "Pixelify sans", bold;
+  font-size: 40px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.enter-code {
+  font-family: "Pixelify sans", bold;
+  font-size: 30px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.code-inputs {
+  font-family: "Pixelify sans";
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.code-input {
+  font-family: "Pixelify sans", bold;
+  width: 60px;
+  height: 60px;
+  font-size: 32px;
+  text-align: center;
+  border: 2px solid #000;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.enter-button {
+  font-family: "Pixelify sans", bold;
+  font-weight: bold;
+  font-size: 20px;
+  width: 200px;
+  padding: 10px;
+  background-color: #f3bc00;
+  color: #000;
+  border-radius: 10px;
+  cursor: pointer;
+  position: fixed;
+  left: 47%;
+  top: 80%;
+  transform: translate(-35%, -50%);
+  position: fixed;
+}
+
+.vote-button {
+  font-family: "Pixelify sans", sans-serif;
+  font-weight: bold;
+  background-color: #ef476f;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  margin: 5px;
+}
+
+.vote-button:hover {
+  background-color: #0000;
+}
+
+.vote-button.meh {
+  background-color: #118ab2;
+}
+
+.vote-button.meh:hover {
+  background-color: #0000;
+}
+
+.poll-results {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 200px;
+  margin-top: 20px;
+}
+
+.bar {
+  width: 100px;
+  background-color: #ccc;
+  margin: 10px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  transition: height 0.5s ease;
+}
+
+.ja {
+  background-color: #e74c3c;
+}
+
+.meh {
+  background-color: #3498db;
+}
+
+/* Responsive text sizing */
+.loading,
+.enter-code {
+  font-size: 4vw;
+}
+
+/* LookAtStagePage styles */
+.lookAtStageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.lookAtStageImage {
+  max-width: 100%;
+  height: auto;
+}
+
+.lookAtStageText {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: 10%;
+  font-size: 5vw;
+  color: #ffd166;
+}
+
+/* Media Queries for better control on larger screens */
+@media (min-width: 600px) {
+  .loading,
+  .enter-code {
+    font-size: 24px; /* Provides a fixed size on larger screens */
+  }
+}
+
+/* Poll result adjustments */
+.poll-results {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 200px;
+  margin-top: -50px;
+}
+
+.bar {
+  width: 15vw;
+  height: 20vh;
+  font-size: 2vw;
+}
+
+.ja::after,
+.meh::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: -30px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.5vw;
+  color: black;
+}
+
+.bar[data-label="Bruk en magisk trylleformel"] {
+  background-color: #8acb88;
+}
+
+.bar[data-label="Spør en visekone om råd"] {
+  background-color: #fdffb6;
+}
+
+.bar[data-label="Gå tilbake til byen"] {
+  background-color: #ffc3a0;
+}
+
+.controller-image {
+  transform: scale(0.3);
+  position: fixed;
+  top: -200px;
+  right: -120px;
+  z-index: 2;
+}
+
+.points-box {
+  height: 30px;
+  width: 125px;
+  background-color: #fff84b;
+  display: flex;
+  border-radius: 15px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "Press Start 2P", System-ui;
+  font-size: 11px;
+  position: fixed;
+  top: 28px;
+  right: 23px;
+  z-index: 1;
+}
+.username {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 10px;
+  padding: 5px;
+}
+
+.username-input {
+  margin-bottom: 20px;
+  background-color: white;
+  border: white;
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+  position: absolute;
+  left: 47%;
+  top: 65%;
+  transform: translate(-35%, -50%);
+  position: fixed;
+}
+.choices {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.choice-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.choice-box {
+  margin: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  background-color: #1e1e1e;
+  color: white;
+  font-family: "Pixelify sans", bold;
+}
+
+.question,
+.user-choice,
+.time-left,
+.results-heading {
+  color: black;
+  font-family: "Pixelify sans", sans-serif;
+  text-align: center;
+}
+
+.time-left {
+  color: #073b4c;
+}
+
+.user-choice {
+  color: #ef476f;
+}
+
+.option-label {
+  color: black;
+  font-size: 12px;
+  position: absolute;
+  bottom: -30px;
+}
+
+.percentage {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+}
+
+.button-color-0 {
+  background-color: #ffd166;
+}
+
+.button-color-1 {
+  background-color: #ef476f;
+}
+
+.button-color-2 {
+  background-color: #118ab2;
+}
+
+/* Styles for bars in poll results */
+.bar {
+  width: 100px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.option-0 {
+  background-color: #ffd166;
+}
+.option-1 {
+  background-color: #ef476f;
+}
+.option-2 {
+  background-color: #118ab2;
+}
